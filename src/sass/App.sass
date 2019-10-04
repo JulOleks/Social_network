@@ -17,23 +17,28 @@ body
 	grid-template-columns: 2fr 10fr
 	// grip-gap: 10px
 
+.app-wrapper__content
+	 grid-area: c
+	 background:#fafafa
+
+
 .header
 	grid-area: h
 	background: $bgcolor
 	box-shadow: 0px 3px 3px 0px #0000005c
 	z-index: 1
-	img
+	&__img
 		width: 50px
 		margin: 0.5% 0 0 2%
 .nav
 	grid-area: n
 	background: $bgcolor
 
-	ul
+	.nav-items
 		list-style-type: none
 		padding-left: 10px
 
-		li
+		&__item
 
 			height: 25px
 			a
@@ -50,7 +55,9 @@ body
 	grid-area: c
 	background: url("../img/main1.jpg") no-repeat
 	background-size: cover
-
+	.profile
+		img
+			width: 100px
 	// &::before
 	// 	content: ""
 	// 	background: linear-gradient(to bottom, rgba(87, 87, 87, 0.44) 0%, rgba(87, 87, 87, 0.58) 100%)
@@ -60,3 +67,8 @@ body
 	// 	right: 0
 	// 	left: 0
 	// 	z-index: 1
+
+.post__item
+	.post__img
+		width: 100px
+		border-radius: 50%		

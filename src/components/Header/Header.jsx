@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <header className="header">
-      <img src={require("../img/logo1.png")} />
+      <img className="header__img" src={require("./../../img/logo1.png")} />
     </header>
   );
 };
