@@ -64,10 +64,6 @@ body {
   border-right: 2px solid #ffd200;
 }
 
-.active {
-  border-right: 2px solid #ffd200;
-}
-
 .content {
   -ms-grid-row: 2;
   -ms-grid-column: 2;

@@ -12,6 +12,7 @@ const MyPosts = () => {
 		<button>Delete</button>
 	</div>
        <Post message="Hello, how are you?" like="17"/>
+       <Post message="Hello, how are you?" like="17"/>
        <Post message="Today is good weather" like="23"/>
 	</div>
      
