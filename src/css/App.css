@@ -50,17 +50,19 @@ body {
   padding-left: 10px;
 }
 
-.nav .nav-items__item {
-  height: 25px;
-}
-
 .nav .nav-items__item a {
+  display: block;
   color: #282828;
   text-decoration: none;
   font-weight: lighter;
+  padding: 9px 0;
 }
 
 .nav .nav-items__item:hover {
+  border-right: 2px solid #ffd200;
+}
+
+.nav .active {
   border-right: 2px solid #ffd200;
 }
 
@@ -79,5 +81,24 @@ body {
 .post__item .post__img {
   width: 100px;
   border-radius: 50%;
+}
+
+.dialogs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 10fr;
+      grid-template-columns: 2fr 10fr;
+}
+
+.dialogs__items {
+  padding: 10px;
+}
+
+.dialogs__items .active {
+  color: #ffd200;
+}
+
+.dialogs__messages {
+  padding: 10px;
 }
 /*# sourceMappingURL=App.css.map */

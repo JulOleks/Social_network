@@ -40,16 +40,18 @@ body
 
 		&__item
 
-			height: 25px
+			
 			a
+				display: block
 				color: $fontcolor
 				text-decoration: none
 				font-weight: $fontW
+				padding: 9px 0
 
 			&:hover
 				border-right: 2px solid #ffd200
-	// .active
-	// 	border-right: 2px solid #ffd200
+	.active
+		border-right: 2px solid #ffd200
 
 .content
 	grid-area: c
@@ -72,3 +74,17 @@ body
 	.post__img
 		width: 100px
 		border-radius: 50%		
+
+.dialogs
+	display: grid
+	grid-template-columns: 2fr 10fr
+	&__items
+		padding: 10px
+		.active
+			color:#ffd200
+		item
+
+	&__messages
+		padding: 10px	
+		message
+				

@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <ul className="nav-items">
-        <li className="active nav-items__item">
+        <li className="nav-items__item">
           <NavLink
             to="/profile"
             
