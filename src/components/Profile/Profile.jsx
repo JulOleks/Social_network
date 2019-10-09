@@ -1,13 +1,13 @@
 import React from "react";
-import MyPosts from "./My Posts/MyPosts";
+import 
+MyPosts from "./My Posts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
   return (
     <div className="content">
-      <div className="profile">
-        <img src={require("./../../img/Profile/p1.jpg")}/>
-       ava+ decription
-      </div>
+      <ProfileInfo />
+      
       <MyPosts />
     </div>
   );

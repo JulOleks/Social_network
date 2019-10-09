@@ -72,6 +72,7 @@ body {
   grid-area: c;
   background: url("../img/main1.jpg") no-repeat;
   background-size: cover;
+  padding: 20px;
 }
 
 .content .profile img {
@@ -94,11 +95,15 @@ body {
   padding: 10px;
 }
 
-.dialogs__items .active {
+.dialogs .active {
   color: #ffd200;
 }
 
 .dialogs__messages {
   padding: 10px;
+}
+
+.postsblock__buttons {
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=App.css.map */
