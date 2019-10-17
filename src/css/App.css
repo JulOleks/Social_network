@@ -87,15 +87,40 @@ body {
 .dialogs {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 10fr;
-      grid-template-columns: 2fr 10fr;
+  -ms-grid-columns: 5fr 7fr;
+      grid-template-columns: 5fr 7fr;
 }
 
 .dialogs__items {
   padding: 10px;
 }
 
-.dialogs .active {
+.dialogs__items .d-item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+}
+
+.dialogs__items .d-item__img {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.dialogs__items .d-item__name {
+  padding-left: 10px;
+  line-height: 6;
+}
+
+.dialogs__items .d-item__name a {
+  text-decoration: none;
+  color: #282828;
+  font-family: "Lato", sans-serif;
+}
+
+.dialogs__items .d-item__name .active {
   color: #ffd200;
 }
 

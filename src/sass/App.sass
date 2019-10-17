@@ -78,13 +78,30 @@ body
 
 .dialogs
 	display: grid
-	grid-template-columns: 2fr 10fr
+	grid-template-columns: 5fr 7fr
 	&__items
 		padding: 10px
-	.active
-		color:#ffd200
+		.d-item
+			display: grid
+			grid-template-columns: 1fr 3fr
+			&__img
+				display: block
+				width: 100%	
+				margin-bottom: 10px	
+				border-radius: 50%			
+			&__name	
+				padding-left: 10px 
+				line-height: 6
+				a
+					text-decoration: none
+					color: $fontcolor
+					font-family: $fontfamily
+					// font-weight: $fontW
+				
+				.active
+					color:#ffd200
 		
-
+		
 	&__messages
 		padding: 10px	
 		message
@@ -99,4 +116,4 @@ body
 	&__buttons
 		margin-bottom: 10px
 
-	&__posts			
+	&__posts
