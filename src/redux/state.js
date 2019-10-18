@@ -1,3 +1,5 @@
+import { renderentireTree } from "../render";
+
 let state = {
     profilesPage: {
         posts: [
@@ -20,4 +22,15 @@ let state = {
     }
 
 }
+export let addPost = (postMessage) => {
+    let newPost = {
+        id: 3,
+        message: postMessage,
+        likesCount: 0
+    };
+    state.profilesPage.posts.push(newPost);
+    renderentireTree(state);
+}
+
+
 export default state;
