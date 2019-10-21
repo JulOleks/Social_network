@@ -23,7 +23,7 @@ let store = {
         }
 
     },
-    rerenderentireTree() {
+    _rerenderentireTree() {
         console.log("State changed");
 
     },
@@ -35,14 +35,14 @@ let store = {
         };
         this._state.profilesPage.posts.push(newPost);
         this._state.profilesPage.newPostText = "";
-        this.rerenderentireTree();
+        this._rerenderentireTree();
     },
     updateNewPostText(newText) {
         this._state.profilesPage.newPostText = newText;
-        this.rerenderentireTree();
+        this._rerenderentireTree(this._state);
     },
-    _subscribe(observer) {
-        this.rerenderentireTree = observer;
+    subscribe(observer) {
+        this._rerenderentireTree = observer;
 
 
     },
@@ -53,3 +53,4 @@ let store = {
 }
 
 export default store;
+window.store = store

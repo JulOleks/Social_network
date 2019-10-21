@@ -14,8 +14,8 @@ let rerenderentireTree = (state) => {
         </BrowserRouter>, document.getElementById('root'));
 
 }
-rerenderentireTree(state);
-store._subscribe(rerenderentireTree)
+rerenderentireTree(store.getState());
+store.subscribe(rerenderentireTree)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
