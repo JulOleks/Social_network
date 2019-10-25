@@ -28,6 +28,7 @@ let store = {
 
     },
     getState() {
+
         return this._state
     },
 
@@ -37,7 +38,7 @@ let store = {
 
     },
     dispatch(action) {
-        debugger
+
         if (action.type === "ADD-POST") {
 
             let newPost = {

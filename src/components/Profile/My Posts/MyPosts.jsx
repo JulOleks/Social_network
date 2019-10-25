@@ -2,8 +2,8 @@ import React from "react";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-	debugger
-	let postselem = props.state.profilesPage.posts.map(p => <Post message={p.message} like={p.likesCount} />)
+
+	let postselem = props.posts.map(posts => <Post message={posts.message} like={posts.likesCount} />)
 
 	let newPostElem = React.createRef();
 
@@ -15,15 +15,15 @@ const MyPosts = (props) => {
 
 		let text = newPostElem.current.value;
 		console.log(text);
-		let action = { type: "UPDATE-NEW-POST-TEXT", newText: text }
-		props.dispatch(action);
+
+		props.dispatch({ type: "UPDATE-NEW-POST-TEXT", newText: text });
 	}
 	return (
 		<div className="postsblock">
 			<h3>My Posts</h3>
 			<div>
 				<div className="postsBlock__textarea">
-					<textarea onChange={onPostChange} ref={newPostElem} value={props.state.profilesPage.newPostText} />
+					<textarea onChange={onPostChange} ref={newPostElem} value={props.newPostText} />
 				</div>
 				<div className="postsblock__buttons">
 					<button onClick={addPost}>Add post</button>
