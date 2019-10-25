@@ -6,14 +6,16 @@ import App from './App';
 import store from "./redux/state"
 import { BrowserRouter, Route } from "react-router-dom";
 
-let state = store.getState();
+
 let rerenderentireTree = (state) => {
+    debugger
     ReactDOM.render(
         <BrowserRouter>
-            <App store={store} />
+            <App state={state} dispatch={store.dispatch.bind(store)} />
         </BrowserRouter>, document.getElementById('root'));
 
 }
+
 rerenderentireTree(store.getState());
 store.subscribe(rerenderentireTree)
 

@@ -27,28 +27,36 @@ let store = {
         console.log("State changed");
 
     },
-    addPost(postMessage) {
-        let newPost = {
-            id: 3,
-            message: this._state.profilesPage.newPostText,
-            likesCount: 0
-        };
-        this._state.profilesPage.posts.push(newPost);
-        this._state.profilesPage.newPostText = "";
-        this._rerenderentireTree();
+    getState() {
+        return this._state
     },
-    updateNewPostText(newText) {
-        this._state.profilesPage.newPostText = newText;
-        this._rerenderentireTree(this._state);
-    },
+
     subscribe(observer) {
         this._rerenderentireTree = observer;
 
 
     },
-    getState() {
-        return this._state
+    dispatch(action) {
+        debugger
+        if (action.type === "ADD-POST") {
+
+            let newPost = {
+                id: 3,
+                message: this._state.profilesPage.newPostText,
+                likesCount: 0
+            };
+            this._state.profilesPage.posts.push(newPost);
+            this._state.profilesPage.newPostText = "";
+            this._rerenderentireTree();
+
+        } else
+            if (action.type === "UPDATE-NEW-POST-TEXT") {
+                this._state.profilesPage.newPostText = action.newText;
+                this._rerenderentireTree(this._state);
+
+            }
     }
+
 
 }
 
