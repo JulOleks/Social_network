@@ -11,7 +11,7 @@ import { Route } from "react-router-dom";
 
 
 const App = (props) => {
-  debugger
+
   return (
 
     <div className="app-wrapper">
