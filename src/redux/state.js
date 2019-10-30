@@ -23,43 +23,47 @@ let store = {
         }
 
     },
-    _rerenderentireTree() {
+
+    _renderEntireTree() {
         console.log("State changed");
-
     },
-    getState() {
 
+    getState() {
         return this._state
     },
 
     subscribe(observer) {
-        this._rerenderentireTree = observer;
-
-
+        this._renderEntireTree = observer;
     },
+
     dispatch(action) {
+        switch(action.type) {
+            case "ADD-POST":
+                let newPost = {
+                    id: 3,
+                    message: this._state.profilesPage.newPostText,
+                    likesCount: 0
+                };
 
-        if (action.type === "ADD-POST") {
+                this._state.profilesPage.posts.push(newPost);
+                this._state.profilesPage.newPostText = "";
 
-            let newPost = {
-                id: 3,
-                message: this._state.profilesPage.newPostText,
-                likesCount: 0
-            };
-            this._state.profilesPage.posts.push(newPost);
-            this._state.profilesPage.newPostText = "";
-            this._rerenderentireTree();
+                this._renderEntireTree(this._state)
 
-        } else
-            if (action.type === "UPDATE-NEW-POST-TEXT") {
+                break;
+
+            case  "UPDATE-NEW-POST-TEXT":
+
                 this._state.profilesPage.newPostText = action.newText;
-                this._rerenderentireTree(this._state);
+                this._renderEntireTree(this._state);
 
-            }
+                break;
+                default:
+                    console.log('no entry');
+                    
+        }
     }
-
-
 }
 
 export default store;
-window.store = store
+window.store = store;

@@ -2,11 +2,14 @@ import React from "react";
 import MyPosts from "./My Posts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = (props) => {
+const Profile = ({ dispatch, state }) => {
   return (
     <div className="content">
       <ProfileInfo />
-      <MyPosts posts={props.profilePage.posts} newPostText={props.profilePage.newPostText} dispatch={props.dispatch} />
+      <MyPosts 
+        state={state} 
+        dispatch={dispatch} 
+      />
     </div>
   );
 };
