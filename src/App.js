@@ -18,15 +18,15 @@ const App = ({ state, dispatch }) => {
       <Header />
       <Navbar />
       <div className="app-wrapper__content">
-        {/* <Route path="/dialogs" render={() => <Dialogs
-          state={props.state.dialogsPage} />} /> */}
+        <Route path="/dialogs" render={() => <Dialogs
+          state={state} />} />
         <Route path="/profile" render={
-          () => ( 
+          () => (
             <Profile
               state={state}
-              dispatch={dispatch} 
+              dispatch={dispatch}
             />)
-          } 
+        }
         />
         <Route path="/news" component={News} />
         <Route path="/music" component={Music} />

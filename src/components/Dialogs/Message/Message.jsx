@@ -2,11 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom"
 
 
-const Message = (props) => {
+const Message = ({ state }) => {
 	return (
 		<div>
 			<div className="message">
-				{props.message}
+				{state.dialogsPage.messages.message}
 			</div>
 
 		</div>

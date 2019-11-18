@@ -6,9 +6,9 @@ const Profile = ({ dispatch, state }) => {
   return (
     <div className="content">
       <ProfileInfo />
-      <MyPosts 
-        state={state} 
-        dispatch={dispatch} 
+      <MyPosts
+        state={state}
+        dispatch={dispatch}
       />
     </div>
   );

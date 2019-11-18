@@ -1,3 +1,6 @@
+
+const ADD_POST = "ADD-POST"
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
 let store = {
     _state: {
         profilesPage: {
@@ -37,8 +40,8 @@ let store = {
     },
 
     dispatch(action) {
-        switch(action.type) {
-            case "ADD-POST":
+        switch (action.type) {
+            case ADD_POST:
                 let newPost = {
                     id: 3,
                     message: this._state.profilesPage.newPostText,
@@ -52,18 +55,28 @@ let store = {
 
                 break;
 
-            case  "UPDATE-NEW-POST-TEXT":
+            case UPDATE_NEW_POST_TEXT:
 
                 this._state.profilesPage.newPostText = action.newText;
                 this._renderEntireTree(this._state);
 
                 break;
-                default:
-                    console.log('no entry');
-                    
+            default:
+                console.log('no entry');
+
         }
     }
 }
+
+
+export const addPostActionCreater = () => ({ type: ADD_POST })
+};
+
+export const updateNewPostTextActionCreator = (text) => (
+    {
+        type: UPDATE_NEW_POST_TEXT,
+        newText: text
+    })
 
 export default store;
 window.store = store;
