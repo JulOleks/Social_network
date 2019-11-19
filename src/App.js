@@ -10,7 +10,7 @@ import Settings from "./components/Settings/Settings";
 import { Route } from "react-router-dom";
 
 
-const App = ({ state, dispatch }) => {
+const App = ({ state, dispatch, store }) => {
 
   return (
 
@@ -18,8 +18,13 @@ const App = ({ state, dispatch }) => {
       <Header />
       <Navbar />
       <div className="app-wrapper__content">
-        <Route path="/dialogs" render={() => <Dialogs
-          state={state} />} />
+        <Route path="/dialogs" render={
+          () => (
+            <Dialogs
+              store={store}
+            />)}
+
+        />
         <Route path="/profile" render={
           () => (
             <Profile

@@ -1,10 +1,13 @@
 import React from "react";
 import Post from "./Post/Post";
-import { updateNewPostTextActionCreator, addPostActionCreater } from "./redux/state"
+import { updateNewPostTextActionCreator, addPostActionCreater } from "../../../redux/state"
+
 const MyPosts = ({ dispatch, state }) => {
 
 
 	const postselem = state.profilesPage.posts.map(p => <Post message={p.message} like={p.likesCount} />)
+
+
 	let newPostElem = React.createRef();
 
 
@@ -13,8 +16,7 @@ const MyPosts = ({ dispatch, state }) => {
 
 	let onPostChange = () => {
 		let text = newPostElem.current.value;
-		let action = { updateNewPostTextActionCreator(text) }
-		dispatch(action);
+		dispatch(updateNewPostTextActionCreator(text));
 	}
 
 	return (

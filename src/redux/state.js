@@ -1,6 +1,8 @@
 
 const ADD_POST = "ADD-POST"
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT"
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY"
+const SEND_MESSAGE = "SEND-MESSAGE"
 let store = {
     _state: {
         profilesPage: {
@@ -19,10 +21,12 @@ let store = {
             ],
 
 
-            messages: [{ id: 1, message: "hi" },
-            { id: 2, message: "Its goo idea" },
-            { id: 3, message: "Nice react" }
-            ]
+            messages: [
+                { id: 1, message: "hi" },
+                { id: 2, message: "Its goo idea" },
+                { id: 3, message: "Nice react" }
+            ],
+            newMessageBody: ""
         }
 
     },
@@ -61,22 +65,35 @@ let store = {
                 this._renderEntireTree(this._state);
 
                 break;
+            case UPDATE_NEW_MESSAGE_BODY:
+                this._state.dialogsPage.newMessageBody = action.body;
+                this._renderEntireTree(this._state);
+                break;
+            case SEND_MESSAGE:
+                let body = this._state.dialogsPage.newMessageBody;
+                this._state.dialogsPage.newMessageBody = ""
+                this._state.dialogsPage.messages.push({ id: 4, message: body })
+                this._renderEntireTree(this._state);
+                break;
             default:
                 console.log('no entry');
+
 
         }
     }
 }
 
 
-export const addPostActionCreater = () => ({ type: ADD_POST })
-};
+export const addPostActionCreater = () => ({ type: ADD_POST });
 
 export const updateNewPostTextActionCreator = (text) => (
     {
         type: UPDATE_NEW_POST_TEXT,
         newText: text
     })
+export const sendMessageCreator = () => ({ type: SEND_MESSAGE })
+
+export const updateNewMessageBodyCreator = (body) => ({ type: UPDATE_NEW_MESSAGE_BODY, body: body })
 
 export default store;
 window.store = store;
